@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>商品リスト</title>
+<link href="/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+<script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet"	href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" />
+<script src="/js/common.js" th:src="@{/js/common.js}"></script>
+
+<script>
+let cartList = [];
+
+$(() => {
+	$('#loginForm').on('submit', login);
+	$('.cartBtn').on('click', addCart);
+	$('#buyBtn').on('click', buy);
+	$("#historyBtn").on('click', showHistory);
+	$("#historyBtnLatest").on('click', showHistory);
+	
+	$("#history").dialog({
+		autoOpen: false,
+		width: 550,
+		modal: true,
+		buttons: [
+			{
+				text: 'OK',
+				click: function() {
+					$(this).dialog("close");
+				}
+			},
+		]
+	});
+});
+</script>
+</head>
+<body>
+<header><h1><a href="/top/">ECサイト</a></h1>
+	<div th:if="${password == null}">
+		<form name="loginForm" id="loginForm" method="post" action="#">
+			　ユーザー名:<input type="text" name="userName" />
+			パスワード:<input type="password" name="password" />
+			<button type="submit">Login</button>
+			<br />
+			<span id="welcome">現在ログインしていません</span>
+		</form>
+		<input type="hidden" id="hiddenUserId" value="0" />
+	</div>
+</header>
+
+<main>
+	<div class="left">
+	<div id="member_name"></div>
+		<h2>商品リスト</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>ID</th><th>商品名</th><th>価格</th><th>注文数</th><th>カート</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="item: ${goods}">
+						<td th:text="${item.id}" />
+						<td th:text="${item.goodsName}" />
+						<td th:text="${item.price}" />
+						<td><input type="number" class="count" value="1" /></td>
+						<td><button class="cartBtn">カートに入れる</button></td>
+					</tr>
+				</tbody>
+			</table>
+		
+		<fieldset>
+			<legend>カート</legend>
+			<table id="cart">
+				<thead>
+					<tr>
+						<th>ID</th><th>商品名</th><th>価格</th><th>注文数</th><th>カート</th>
+					</tr>
+				</thead>
+				
+				<tbody>
+				</tbody>
+			</table>
+			<button id="buyBtn">購入</button>
+			<button id="historyBtn" value="1">全ての購入履歴</button>
+			<button id="historyBtnLatest" value="2">最近の購入履歴</button>
+		</fieldset>
+	</div>
+
+	<div class="right">
+		<div th:insert="fragment::link_menu"></div>
+	</div>
+</main>
+
+<div id="history" title="購入履歴" style="display:none;">
+	<table id="historyTable">
+		<thead>
+			<tr>
+				<th>商品名</th><th>注文数</th><th>購入日時</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+		
+		</tbody>
+	</table>
+</div>
+</body>
+<div th:insert="fragment::footer"></div>
+</html>

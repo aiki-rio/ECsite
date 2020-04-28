@@ -1,0 +1,17 @@
+spring:
+  thymeleaf:
+    cache: false
+  datasource:
+    url: jdbc:mysql://localhost:3306/ecsite_spring?serverTimezone=JST
+    username: root
+    password: mysql
+
+mybatis:
+  configuration:
+    mapUnderscoreToCamelCase: true
+    
+logging:
+  level:
+    org:
+      springframework: WARN
+    jp.co.internous.ecsite.model.mapper: DEBUG

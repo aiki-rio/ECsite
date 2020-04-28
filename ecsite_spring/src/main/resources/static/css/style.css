@@ -1,0 +1,281 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #F2F2F2;
+}
+
+header {
+	margin: 0;
+	padding: 0;
+	background: green;
+	color: white;
+	margin-bottom: 10px;
+	height: 85px;
+}
+
+header h1 {
+	float: left;
+	margin: 0;
+	padding: 0;
+	margin-left: 20px;
+	line-height: 85px;
+}
+h1 a {
+	color: white;
+	text-decoration: none;
+}
+h1 a:hover {
+	color:  #D6D6D6;
+	text-decoration: underline;
+	
+}
+
+header form {
+	padding-top: 10px;
+}
+
+header div {
+	margin-right: 20px;
+}
+
+header span {
+	float: left;
+	margin-top: 10px;
+	margin-bottom: 0;
+	padding-left: 150px;
+}
+
+input[name=userName] {
+	width: 100px;
+}
+
+input[name=password] {
+	width: 100px;
+}
+
+#member_name {
+	padding-left: 15px;
+}
+
+main h2 {
+	padding-left: 15px;
+}
+
+main .left {
+	width: 70%;
+	margin-bottom: 30px;
+	margin-left: 10px;
+	border: solid 1px;
+	border-radius: 1em;
+	padding: 5px 15px 20px 15px;
+	float: left;
+	background-color: #EAEAEA;
+	opacity: 0.95;
+}
+
+.left li {
+	font-size: 20px;
+	padding-bottom: 10px;
+}
+ul li ul li {
+	margin-left: -20px;
+	list-style: none;
+}
+
+main .create_left, .confirm_left {
+	width: 40%;
+	margin-bottom: 30px;
+	margin-left: 10px;
+	border: solid 1px;
+	border-radius: 1em;
+	padding: 5px 30px 30px 30px;
+	float: left;
+	background-color: #EAEAEA;
+	opacity: 0.95;
+}
+
+.create_left input {
+	width: 130px;
+	float: right;
+}
+
+.confirm_left input {
+	width: 130px;
+}
+
+main .admin_left {
+	width: 40%;
+	margin-bottom: 30px;
+	margin-left: 10px;
+	border: solid 1px;
+	border-radius: 1em;
+	padding: 5px 15px 30px 50px;
+	float: left;
+	background-color: #EAEAEA;
+	opacity: 0.95;
+}
+
+main .right {
+	float: right;
+	border: solid 1px;
+	width: 24%;
+	margin-right: 5px;
+	border-radius: 0.5em;
+	background-color: #D6D6D6;
+}
+
+.right h2 {
+	text-align: center;
+	margin-left: 10px;
+	margin-right: 10px;
+	border-bottom: 1px dashed;
+}
+.right li {
+	padding-bottom: 10px;
+	list-style: none;
+}
+
+li a:link {
+	color: black;
+}
+li a:visited {
+	color: black;
+}
+li a:hover {
+	color: #444444;
+	
+}
+
+table {
+	margin: 20px;
+	border-collapse: collapse;
+}
+
+table td, table th {
+	border: 1px solid grey;
+}
+
+th {
+	background: green;
+	color: white;
+}
+
+th:nth-child(1) {
+	width: 30px;
+}
+th:nth-child(2) {
+	width: 120px;
+}
+th:nth-child(3) {
+	width: 80px;
+}
+th:nth-child(4) {
+	width: 60px;
+}
+th:nth-child(5) {
+	width: 95px;
+}
+td:nth-child(1) {
+	text-align: right;
+}
+td:nth-child(2) {
+	text-align: left;
+}
+td:nth-child(3) {
+	text-align: right;
+}
+td:nth-child(4) {
+	text-align: center;
+}
+td:nth-child(5) {
+	text-align: center;
+}
+td:nth-child(6) {
+	display:none;
+}
+td input {
+	width: 93%;
+	text-align: right;
+}
+
+table#cart thead tr th {
+	background: #c0c0c0 !important;
+	color: black;
+}
+table#historyTable thead tr th:nth-child(1) {
+	width: 150px;
+}
+table#historyTable thead tr th:nth-child(2) {
+	width: 65px;
+}
+table#historyTable thead tr th:nth-child(3) {
+	width: 250px;
+}
+table#historyTable tbody tr td:nth-child(1) {
+	padding: 0 5px;
+	text-align: left;
+}
+table#historyTable tbody tr td:nth-child(2) {
+	padding: 0 5px;
+	text-align: right;
+}
+table#historyTable tbody tr td:nth-child(3) {
+	padding: 0 5px;
+	text-align: left;
+}
+
+main .goodslist {
+	width: 40%;
+	margin-bottom: 30px;
+	margin-left: 10px;
+	border: solid 1px;
+	border-radius: 1em;
+	padding: 5px 15px 30px 30px;
+	float: left;
+	background-color: #EAEAEA;
+	opacity: 0.95;
+}
+
+table #adminTable thead tr th:nth-child(1) {
+	width: 50px;
+}
+table #adminTable thead tr th:nth-child(2) {
+	width: 150px;
+}
+table #adminTable thead tr th:nth-child(3) {
+	width: 100px;
+}
+table #adminTable thead tr th:nth-child(4) {
+	width: 80px;
+}
+table #adminTable tbody tr td:nth-child(1) {
+	padding: 0 5px;
+	text-align: right;
+}
+table #adminTable tbody tr td:nth-child(2) {
+	padding: 0 5px;
+	text-align: left;
+}
+table #adminTable tbody tr td:nth-child(3) {
+	padding:: 0 5px;
+	text-align: right;
+}
+table #adminTable tbody tr td:nth-child(4) {
+	text-align: center;
+}
+
+#adminPage button {
+	margin-left: 20px;
+}
+
+footer {
+	clear: both;
+	width: 100%;
+	height: 70px;
+	line-height: 70px;
+	text-align: center;
+	color: white;
+	background-color: #4C4C4C;
+	position: absolute;
+	bottom: 0;
+}

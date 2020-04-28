@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>管理者 -- 商品追加画面</title>
+<link href="/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+<body>
+<header><h1><a href="/top/">ECサイト -- 管理者ページ</a></h1></header>
+
+<main>
+	<div id="adminPage">
+		<h2>商品の新規登録</h2>
+		<form name="addGoodsForm" id="addGoodsForm" method="post" action="/ecsite/admin/addGoods" th:action="@{/ecsite/admin/addGoods}">
+			<p>商品名:<input type="text" name="goodsName" required/></p>
+			<p>価格:<input type="text" name="price" required/></p>
+			<button type="submit">登録</button>
+			<input type="hidden" name="userName" th:value="${userName}" />
+			<input type="hidden" name="password" th:value="${password}" />
+		</form>
+	</div>
+</main>
+
+</body>
+<div th:insert="fragment::footer"></div>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link href="/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+<title>Insert title here</title>
+</head>
+<body>
+	<header><h1><a href="/top/">ECサイト -- 新規登録ページ</a></h1></header>
+
+	<main>
+		<div class="create_left">
+			<h2>登録が完了しました</h2>
+			<a href="/ecsite/">こちら</a> が商品リストになります
+		</div>
+	</main>
+</body>
+<div th:insert="fragment::footer"></div>
+</html>

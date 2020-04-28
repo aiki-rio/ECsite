@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link href="/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+<title>トップページ</title>
+</head>
+<body>
+<header><h1><a href="/top/">ECサイト -- トップページ</a></h1></header>
+
+<main>
+	<div class="left">
+		<h2>リンク</h2>
+		<ul>
+			<li><a href="/usercreate/">新規登録</a>
+				<ul>
+					<li>┗新規の方</li>
+				</ul>
+			</li>
+			<li><a href="/ecsite/">商品購入画面へ</a>
+				<ul>
+					<li>┗会員登録済みの方</li>
+				</ul>
+			</li>
+			<li><a href="/ecsite/admin/">管理者ログイン</a></li>
+		</ul>
+	</div>
+</main>
+
+</body>
+<div th:insert="fragment::footer"></div>
+</html>

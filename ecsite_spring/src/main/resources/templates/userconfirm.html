@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link href="/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+<title>ユーザー情報入力確認ページ</title>
+</head>
+<body>
+<header><h1><a href="/top/">ECサイト -- 新規登録ページ</a></h1></header>
+	
+<main>
+	<div class="confirm_left">
+		<h2>新規登録</h2>
+		<p>こちらの内容で登録しますがよろしいでしょうか？</p>
+		<p>ユーザー名: <a th:text="${userName}"></a></p>
+		<p>パスワード: <a th:text="${password}"></a></p>
+		<p>フルネーム: <a th:text="${fullName}"></a></p>
+		
+		<form method="post" action="/usercreate/confirmComplete" th:action="@{/usercreate/confirmComplete}">
+			<input type="hidden" name="userName" th:value="${userName}" />
+			<input type="hidden" name="password" th:value="${password}" />
+			<input type="hidden" name="fullName" th:value="${fullName}" />
+			<button type="submit">登録</button>
+			<input type="button" onclick="history.back()" value="戻って修正する" />
+		</form>
+	</div>
+</main>
+
+</body>
+</html>

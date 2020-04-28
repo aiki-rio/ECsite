@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link href="/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+<title>ユーザー新規登録</title>
+</head>
+<body>
+<header><h1><a href="/top/">ECサイト -- 新規登録ページ</a></h1></header>
+	
+<main>
+	<div class="create_left">
+		<h2>新規登録</h2>
+		<form method="post" action="/usercreate/userConfirm" th:action="@{/usercreate/userConfirm}">
+			<p>ユーザー名:<input type="text" name="userName" required/></p>
+			<p>パスワード(半角英数字6文字以上): <input type="text" name="password" pattern="^[a-z0-9]{6,}$" required/></p>
+			<p>フルネーム: <input type="text" name="fullName" required/></p>
+			<button type="submit">登録</button>
+		</form>
+	</div>
+	
+	<div class="right">
+		<div th:insert="fragment::link_menu"></div>
+	</div>
+</main>
+
+</body>
+<div th:insert="fragment::footer"></div>
+</html>

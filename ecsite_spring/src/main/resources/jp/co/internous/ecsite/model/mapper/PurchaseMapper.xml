@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.ort//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="jp.co.internous.ecsite.model.mapper.PurchaseMapper">
+
+	<select id="findHistory" resultType="jp.co.internous.ecsite.model.domain.dto.HistoryDto">
+		SELECT p.id, p.user_id, p.goods_id, g.goods_name, p.item_count, p.total, p.created_at 
+		FROM purchase p 
+			INNER JOIN goods g 
+			ON p.goods_id = g.id 
+		WHERE p.user_id = #{userId}
+	</select>
+	
+	<select id="findHistoryLatest" resultType="jp.co.internous.ecsite.model.domain.dto.HistoryDto">
+		SELECT p.id, p.user_id, p.goods_id, g.goods_name, p.item_count, p.total, p.created_at 
+		FROM purchase p 
+			INNER JOIN goods g 
+			ON p.goods_id = g.id 
+		WHERE created_at = ( 
+			SELECT MAX(created_at) FROM purchase p WHERE p.user_id = #{userId})
+	</select>
+	
+</mapper>

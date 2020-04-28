@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link href="/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+<script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="/js/common.js" th:src="@{/js/common.js}"></script>
+
+<script>
+$(() => {
+	$('.deleteBtn').on('click', deletegoods);
+});
+</script>
+
+<title>管理者 -- 商品リスト</title>
+</head>
+<body>
+<header><h1><a href="/top/">ECサイト -- 商品リスト</a></h1></header>
+
+<main>
+	<div class="goodslist">
+		<table id="adminTable">
+			<thead>
+				<tr>
+					<th>ID</th><th>商品名</th><th>価格</th><th>削除</th>
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr th:each="item: ${goods}">
+					<td th:text="${item.id}" />
+					<td th:text="${item.goodsName}" />
+					<td th:text="${item.price}" />
+					<td><button type="submit" class="deleteBtn">削除</button></td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<form name="goodsForm" id="adminPage" method="post" action="/ecsite/admin/goodsMst" th:action="@{/ecsite/admin/goodsMst}">
+			<button type="submit" th:if="${userName != null}">新規追加</button>
+			<input type="hidden" name="userName" th:value="${userName}" />
+			<input type="hidden" name="password" th:value="${password}" />
+		</form>
+	</div>
+	
+	<div class="right">
+		<div th:insert="fragment::link_menu_blank"></div>
+	</div>
+</main>
+
+</body>
+<div th:insert="fragment::footer"></div>
+</html>
